@@ -1,0 +1,71 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "cb-transport-io-lab"
+version = "0.1.0"
+description = "CypressBit Transportation I-O Modeling Lab - Internal R&D Prototype"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "CypressBit", email = "info@cypressbit.com" }]
+keywords = ["input-output", "economics", "transportation", "employment", "modeling"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.1",
+    "scipy>=1.11",
+    "pydantic>=2.5",
+    "shiny>=0.6",
+    "plotly>=5.18",
+    "openpyxl>=3.1",
+    "jinja2>=3.1",
+    "click>=8.1",
+    "rich>=13.7",
+    "pyarrow>=14.0",
+    "markdown>=3.5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "ruff>=0.1",
+    "mypy>=1.7",
+    "pandera>=0.18",
+]
+
+[project.scripts]
+cb-io-lab = "cb_transport_io_lab.cli:main"
+
+[project.urls]
+Repository = "https://github.com/cypressbit/cypressbit-transport-io-lab"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
