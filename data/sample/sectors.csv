@@ -1,0 +1,13 @@
+sector_id,sector_name,bea_code,naics_hint,output_millions,employment_fte,wage_share,notes
+S001,Highway and street construction,BEA_SAMPLE_2303,2373,500000,4500000,0.280,Synthetic demonstration sector
+S002,Asphalt and petroleum products,BEA_SAMPLE_3241,3241,700000,950000,0.120,Synthetic demonstration sector
+S003,Cement and concrete products,BEA_SAMPLE_3273,3273,180000,580000,0.210,Synthetic demonstration sector
+S004,Aggregates and stone products,BEA_SAMPLE_2123,2123,95000,310000,0.230,Synthetic demonstration sector
+S005,Iron and steel products,BEA_SAMPLE_3311,3311,260000,700000,0.180,Synthetic demonstration sector
+S006,Engineering and design services,BEA_SAMPLE_5413,5413,420000,2600000,0.520,Synthetic demonstration sector
+S007,Equipment rental and leasing,BEA_SAMPLE_5324,5324,150000,620000,0.300,Synthetic demonstration sector
+S008,Truck transportation,BEA_SAMPLE_4841,4841,480000,2100000,0.360,Synthetic demonstration sector
+S009,Finance insurance and admin services,BEA_SAMPLE_FIA,52-56,1500000,8800000,0.390,Synthetic demonstration sector
+S010,Retail and local services,BEA_SAMPLE_4472,44-45/72,2400000,21000000,0.430,Synthetic demonstration sector
+S011,Health care and education services,BEA_SAMPLE_6162,61-62,2800000,24000000,0.550,Synthetic demonstration sector
+S012,Other manufacturing and services,BEA_SAMPLE_OTHER,31-33/81,3000000,16000000,0.320,Synthetic demonstration sector

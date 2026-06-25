@@ -1,0 +1,24 @@
+improvement_type,spending_category,sector_id,share,domestic_share,notes
+pavement,onsite_labor_and_construction,S001,0.42,0.97,Primarily domestic labor and equipment
+pavement,asphalt,S002,0.28,0.88,Predominantly domestic product with some import penetration
+pavement,aggregates,S004,0.10,0.99,Locally sourced stone and gravel
+pavement,engineering,S006,0.08,0.95,Domestic design and inspection services
+pavement,freight,S008,0.05,0.98,Domestic trucking and haul
+pavement,finance_admin,S009,0.04,0.92,Domestic financial and administrative services
+pavement,concrete,S003,0.02,0.96,Minor concrete work in shoulders and curbing
+pavement,equipment_rental,S007,0.01,0.94,Minor supplemental equipment rental
+bridge,onsite_labor_and_construction,S001,0.35,0.96,Primarily domestic labor and skilled trades
+bridge,concrete,S003,0.20,0.95,Structural concrete for deck and substructure
+bridge,steel,S005,0.18,0.72,Structural steel and reinforcement; higher import penetration
+bridge,engineering,S006,0.12,0.95,Structural and geotechnical engineering design
+bridge,aggregates,S004,0.05,0.99,Subgrade and approach aggregate materials
+bridge,freight,S008,0.04,0.98,Domestic trucking and materials delivery
+bridge,finance_admin,S009,0.04,0.92,Project financial and administrative services
+bridge,equipment_rental,S007,0.02,0.94,Specialized heavy equipment rental
+safety,onsite_labor_and_construction,S001,0.50,0.97,Signage installation marking and delineation labor
+safety,engineering,S006,0.20,0.95,Traffic engineering safety design and inspection
+safety,steel,S005,0.10,0.78,Guardrails sign structures and overhead hardware
+safety,finance_admin,S009,0.08,0.92,Administrative and project management services
+safety,freight,S008,0.06,0.98,Delivery of safety hardware and materials
+safety,equipment_rental,S007,0.04,0.94,Equipment for installation activities
+safety,aggregates,S004,0.02,0.99,Minor aggregate for shoulder and base repairs
