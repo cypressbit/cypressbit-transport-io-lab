@@ -1,0 +1,361 @@
+/*
+ * CypressBit Transportation I-O Modeling Lab — Accessibility Stylesheet
+ *
+ * Target: WCAG 2.1 Level AA
+ * All foreground/background color pairs carry a contrast ratio >= 4.5:1.
+ * No external font or image references.
+ */
+
+/* ── Color tokens ─────────────────────────────────────────────────────────── */
+:root {
+  /* Blues — all >= 4.5:1 on white */
+  --cb-primary:       #0b3d6b;   /* navy,  contrast ≈11.1:1 on white   */
+  --cb-secondary:     #174e82;   /* dark blue, ≈8.6:1 on white         */
+  --cb-accent:        #2471a3;   /* medium blue, ≈5.5:1 on white       */
+
+  /* Text */
+  --cb-text:          #1a1a1a;   /* near-black, ≈18.1:1 on white       */
+  --cb-muted:         #3d3d3d;   /* dark gray, ≈11.0:1 on white        */
+
+  /* Surfaces */
+  --cb-bg:            #f4f6f9;
+  --cb-surface:       #ffffff;
+  --cb-border:        #8fa4b8;   /* ≥3:1 on white (UI border, not text) */
+
+  /* Focus ring — must be highly visible */
+  --cb-focus:         #005fcc;   /* ≈5.8:1 on white                    */
+
+  /* Disclaimer / warning (text on warn-bg) */
+  --cb-warn-bg:       #fff8e1;
+  --cb-warn-border:   #e6a817;
+  --cb-warn-text:     #5c3a00;   /* ≈10.4:1 on warn-bg                 */
+
+  /* Error box */
+  --cb-error-bg:      #fdf0ee;
+  --cb-error-border:  #c0392b;
+  --cb-error-text:    #7b1d1d;   /* ≈8.6:1 on error-bg                 */
+
+  /* Chart accent palette (also used for decorative left borders) */
+  --cb-chart-a:       #0b3d6b;
+  --cb-chart-b:       #2471a3;
+  --cb-chart-c:       #5dade2;
+
+  --cb-success:       #145a32;   /* ≈10.9:1 on white                   */
+}
+
+/* ── Global reset additions ───────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--cb-text);
+  background-color: var(--cb-bg);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ── Keyboard focus — visible outline for all interactive elements ─────────── */
+:focus-visible {
+  outline: 3px solid var(--cb-focus);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* Suppress mouse-click outline without hiding keyboard outline */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ── Semantic headings ────────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--cb-primary);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-top: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+h1 { font-size: 1.65rem; }
+h2 { font-size: 1.30rem; }
+h3 { font-size: 1.10rem; }
+h4 { font-size: 0.97rem; }
+
+/* ── Application header bar ───────────────────────────────────────────────── */
+.cb-header {
+  background-color: var(--cb-primary);
+  color: #ffffff;
+  padding: 0.85rem 1.4rem 0.7rem;
+  border-bottom: 4px solid var(--cb-accent);
+}
+
+.cb-header h1 {
+  color: #ffffff;
+  font-size: 1.55rem;
+  margin: 0 0 0.2rem;
+}
+
+.cb-subtitle {
+  color: #cfe2f3;
+  font-size: 0.90rem;
+  margin: 0;
+}
+
+/* ── Disclaimer / synthetic-data notice ──────────────────────────────────── */
+.cb-disclaimer {
+  background-color: var(--cb-warn-bg);
+  border: 1px solid var(--cb-warn-border);
+  border-left: 5px solid var(--cb-warn-border);
+  border-radius: 4px;
+  color: var(--cb-warn-text);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin: 0.6rem 0;
+  padding: 0.55rem 0.9rem;
+}
+
+.cb-disclaimer strong {
+  display: inline;
+  font-weight: 700;
+}
+
+/* ── Metric card grid ─────────────────────────────────────────────────────── */
+.cb-metric-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 0.6rem 0 0.9rem;
+}
+
+.cb-metric-card {
+  background-color: var(--cb-surface);
+  border: 1px solid var(--cb-border);
+  border-left: 5px solid var(--cb-primary);
+  border-radius: 6px;
+  flex: 1 1 150px;
+  min-width: 130px;
+  padding: 0.65rem 0.9rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+}
+
+.cb-metric-label {
+  color: var(--cb-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.045em;
+  margin: 0 0 0.15rem;
+  text-transform: uppercase;
+}
+
+.cb-metric-value {
+  color: var(--cb-primary);
+  font-size: 1.55rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 0.1rem;
+}
+
+.cb-metric-note {
+  color: var(--cb-muted);
+  font-size: 0.72rem;
+  margin: 0;
+}
+
+/* ── Chart caption — text summary for screen-reader / low-vision users ─────── */
+.cb-chart-caption {
+  border-left: 3px solid var(--cb-border);
+  color: var(--cb-muted);
+  font-size: 0.80rem;
+  font-style: italic;
+  margin: 0.2rem 0 0.45rem;
+  padding: 0.25rem 0.55rem;
+}
+
+/* ── Tables — clear borders and high contrast ─────────────────────────────── */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+caption {
+  caption-side: top;
+  color: var(--cb-text);
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  text-align: left;
+}
+
+th {
+  background-color: var(--cb-primary);
+  border: 1px solid #0a2e52;
+  color: #ffffff;             /* white on navy ≈11.1:1 */
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.38rem 0.6rem;
+  text-align: left;
+  vertical-align: middle;
+}
+
+td {
+  border: 1px solid var(--cb-border);
+  font-size: 0.87rem;
+  padding: 0.35rem 0.6rem;
+  vertical-align: top;
+}
+
+tr:nth-child(even) td {
+  background-color: #edf2f7;
+}
+
+tr:focus-within td {
+  outline: 2px solid var(--cb-focus);
+  outline-offset: -2px;
+}
+
+/* ── Shiny DataGrid container ─────────────────────────────────────────────── */
+.shiny-data-frame-output {
+  border: 1px solid var(--cb-border);
+  border-radius: 4px;
+  overflow: auto;
+  max-height: 420px;
+}
+
+/* ── Action / Run button ──────────────────────────────────────────────────── */
+.btn-primary,
+.shiny-action-button.btn-primary {
+  background-color: var(--cb-primary) !important;
+  border-color: var(--cb-primary) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+.btn-primary:hover,
+.shiny-action-button.btn-primary:hover {
+  background-color: var(--cb-accent) !important;
+  border-color: var(--cb-accent) !important;
+}
+
+.btn-primary:focus-visible {
+  outline: 3px solid var(--cb-focus);
+  outline-offset: 3px;
+}
+
+/* ── Download button ──────────────────────────────────────────────────────── */
+.btn-default[href],
+a.btn.shiny-download-link {
+  background-color: var(--cb-success) !important;
+  border-color: var(--cb-success) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+a.btn.shiny-download-link:hover {
+  background-color: #0e3b21 !important;
+  border-color: #0e3b21 !important;
+}
+
+/* ── Sidebar ──────────────────────────────────────────────────────────────── */
+.bslib-sidebar-layout > .sidebar {
+  background-color: #dde8f2;
+  border-right: 2px solid var(--cb-border);
+}
+
+.sidebar label,
+.sidebar .control-label,
+.sidebar .form-label {
+  color: var(--cb-text);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.sidebar .shiny-input-container {
+  margin-bottom: 0.6rem;
+}
+
+/* ── Card headers ─────────────────────────────────────────────────────────── */
+.card > .card-header {
+  background-color: #dde8f2;
+  border-bottom: 2px solid var(--cb-border);
+  color: var(--cb-primary);
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 0.45rem 0.85rem;
+}
+
+/* ── Accordion ────────────────────────────────────────────────────────────── */
+.accordion-button {
+  background-color: #dde8f2;
+  color: var(--cb-primary);
+  font-weight: 600;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--cb-primary);
+  color: #ffffff;
+}
+
+.accordion-button:focus-visible {
+  outline: 3px solid var(--cb-focus);
+  outline-offset: 2px;
+  z-index: 3;
+}
+
+/* ── Error / alert box ────────────────────────────────────────────────────── */
+.cb-error-box {
+  background-color: var(--cb-error-bg);
+  border: 1px solid var(--cb-error-border);
+  border-left: 5px solid var(--cb-error-border);
+  border-radius: 4px;
+  color: var(--cb-error-text);
+  font-size: 0.875rem;
+  margin: 0.5rem 0;
+  padding: 0.55rem 0.9rem;
+}
+
+/* ── Code blocks (methodology formulas) ───────────────────────────────────── */
+pre {
+  background-color: #f0f4f8;
+  border: 1px solid var(--cb-border);
+  border-left: 4px solid var(--cb-accent);
+  border-radius: 4px;
+  color: var(--cb-text);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  margin: 0.4rem 0 0.7rem;
+  overflow-x: auto;
+  padding: 0.55rem 0.8rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* ── Responsive adjustments ───────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .cb-metric-card {
+    flex: 1 1 120px;
+    min-width: 100px;
+  }
+
+  .cb-metric-value {
+    font-size: 1.2rem;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  .cb-header h1 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Prevent horizontal body scroll from wide tables */
+.shiny-data-frame-output,
+.card-body > .shiny-data-frame-output {
+  max-width: 100%;
+  overflow-x: auto;
+}
